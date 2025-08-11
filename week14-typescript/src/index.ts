@@ -42,20 +42,37 @@
 
 //TYPES
 
-interface Employee {
+// interface Employee {
+//   name: string;
+//   startDate: Date;
+// }
+
+// interface Manager {
+//   name: string;
+//   department: string;
+// }
+
+// type TeamLead = Employee & Manager;
+
+// const teamLead: TeamLead = {
+//   name: "garv",
+//   startDate: new Date(),
+//   department: "XYZ",
+//};
+
+interface People {
   name: string;
-  startDate: Date;
+  age: number;
 }
 
-interface Manager {
+class Manager implements People {
   name: string;
-  department: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
 }
 
-type TeamLead = Employee & Manager;
-
-const teamLead: TeamLead = {
-  name: "garv",
-  startDate: new Date(),
-  department: "XYZ",
-};
+let user = new Manager("John", 30);
